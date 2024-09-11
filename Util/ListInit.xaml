@@ -19,7 +19,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1022,1314</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1253,1314</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ImageListInit_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,10 +114,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロセスログ：「リストを初期化」" sap:VirtualizedContainerService.HintSize="671,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Util\ProcessLog.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロセスログ：リスト初期化" sap:VirtualizedContainerService.HintSize="671,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Util\ProcessLog.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_processId">[in_processId]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_label">リストを初期化</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_label">リスト初期化</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_message">[in_listPath + "(" + in_listSheet + ")"]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_delimiter" />
       </ui:InvokeWorkflowFile.Arguments>
