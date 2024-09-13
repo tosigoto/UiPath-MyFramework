@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1008,1377</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1063,1324</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -92,14 +92,14 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="一連の処理を行うプロセス。&#xA;- &#xA;- &#xA;- &#xA;&#xA;例外が発生した場合、プロセス成功判定をFalseにする。" DisplayName="Process" sap:VirtualizedContainerService.HintSize="641,1312" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="一連の処理を行うプロセス。&#xA;- &#xA;- &#xA;- &#xA;&#xA;例外が発生した場合、プロセス成功判定をFalseにする。" DisplayName="Process" sap:VirtualizedContainerService.HintSize="643,1259" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="579,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="581,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
@@ -113,7 +113,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロセスログ：" sap:VirtualizedContainerService.HintSize="579,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Util\ProcessLog.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロセスログ：" sap:VirtualizedContainerService.HintSize="581,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Util\ProcessLog.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_processId">[io_row("process-id").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_label">Process-Begin</InArgument>
@@ -121,7 +121,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_delimiter" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="579,770" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581,717" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="541,519" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -155,10 +155,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547,532" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -194,10 +194,10 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロセスログ：" sap:VirtualizedContainerService.HintSize="479,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Util\ProcessLog.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="エラーログ：プロセスエラー" sap:VirtualizedContainerService.HintSize="479,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Util\ErrorLog.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_processId">[io_row("process-id").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_label">Process-Error</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_label">プロセスエラー</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_message">[io_row("result").ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_delimiter" />
                 </ui:InvokeWorkflowFile.Arguments>
