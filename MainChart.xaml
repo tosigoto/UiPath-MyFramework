@@ -92,7 +92,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="MainChart" sap:VirtualizedContainerService.HintSize="1123,811" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="MainChart" sap:VirtualizedContainerService.HintSize="1103,821" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="ui:BusinessRuleException" sap2010:Annotation.AnnotationText="ビジネス例外" Default="[Nothing]" Name="bizEx" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="行インデックス" Name="rowIdx" />
@@ -102,6 +102,7 @@
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:Annotation.AnnotationText="設定ディクショナリー" Name="dicConfig" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="残りリトライ回数" Name="retryCountDown" />
       <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="プロセス成功判定" Name="isProcessSuccess" />
+      <Variable x:TypeArguments="x:String" Name="sessionId" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -235,6 +236,14 @@
                               <ui:MultipleAssign DisplayName="Init idx" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                                 <ui:MultipleAssign.AssignOperations>
                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[sessionId]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyMMdd_HHmmss")]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
                                       <ui:AssignOperation.To>
                                         <OutArgument x:TypeArguments="x:Int32">[rowIdx]</OutArgument>
@@ -263,7 +272,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">700,205 700,275</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:MultipleAssign DisplayName="行を取得" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                  <ui:MultipleAssign DisplayName="行を取得" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                                     <ui:MultipleAssign.AssignOperations>
                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -279,7 +288,7 @@
                                             <OutArgument x:TypeArguments="x:Object">[rowCurrent("process-id")]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:Object">["P" + (rowIdx + 1 Mod 1000000).ToString("000000")]</InArgument>
+                                            <InArgument x:TypeArguments="x:Object">["P" + sessionId + "-" + (rowIdx + 1).ToString("000000")]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
@@ -287,7 +296,7 @@
                                             <OutArgument x:TypeArguments="x:Object">[rowCurrent("timestamp")]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("yyMMdd-HHmmssff")]</InArgument>
+                                            <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("yyMMdd-HHmmss-ff")]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">

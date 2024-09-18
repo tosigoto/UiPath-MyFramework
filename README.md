@@ -1,5 +1,14 @@
 # UiPath-MyFramework
 
+- [UiPath-MyFramework](#uipath-myframework)
+  - [機能／概要](#機能概要)
+  - [流れ](#流れ)
+    - [メインフローチャート図](#メインフローチャート図)
+  - [対応しているビジネス例外](#対応しているビジネス例外)
+  - [構成](#構成)
+  - [プロセスIDについて](#プロセスidについて)
+  - [動作環境](#動作環境)
+
 
 ## 機能／概要
 * シンプルなフレームワーク。
@@ -16,7 +25,7 @@
     1. データ書き込み
 
 ### メインフローチャート図
-<img src="./MainChart.png" title="MainChart" />
+<img src="./MainChart.png" title="MainChart" loading="lazy" />
 
 
 ## 対応しているビジネス例外
@@ -46,7 +55,8 @@
 
 * Parts  
     * Process
-        * 何らかの処理をするシーケンス。
+        * リストの x列 ÷ y列 の計算結果を result列 にセットするシーケンス。
+        * エラーが発生した場合は、エラーメッセージを result列 にセットする。
 
 * Util
     * ListInit  
@@ -66,6 +76,10 @@
 
     * ReadConfig  
         * 設定ファイルを読み込む。
+
+
+## プロセスIDについて
+<img src="./process-id.png" title="process-id" loading="lazy" />
 
 
 ## 動作環境
